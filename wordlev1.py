@@ -1,6 +1,7 @@
 # this program need DL.txt file.
 
 
+# read the dictionary file
 def GetDic():
     try:
         dicopen = open("DL.txt", "r")
@@ -13,23 +14,27 @@ def GetDic():
         return
 
 
+# removes words containing the given letter
 def grey(list1, w):
     for i in range(len(w)):
         pref1 = [x for x in list1 if w[i] not in x]
     return pref1
 
 
+# removes words containing given letter in given position
 def yellow(list2, y, pos):
     pref2 = [x for x in list2 if y != x[pos]]
     pref4 = [x for x in pref2 if y in x]
     return pref4
 
 
+# removes words without the given letter in given position
 def green(list3, z, posi):
     pref3 = [x for x in list3 if z == x[posi]]
     return pref3
 
 
+# reads input containing guesses and color code of the letters.
 word = input("Enter the word:")
 colour = input("Grey = 1\nYellow = 2\nGreen = 3\nEnter the colour scheme:")
 word = list(word)
@@ -37,6 +42,7 @@ colour = [eval(j) for j in colour]
 print(word, colour)
 
 
+# solves the issue of repeated letters with different colors
 def skipper(letterlist, colourlist):
     d = GetDic()
     gor = [0 for x in range(5)]
