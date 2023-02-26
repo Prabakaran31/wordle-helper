@@ -1,4 +1,4 @@
-# wordle-helpeer
+# wordle-helper
 
 A program to help the popular internet game wordle.
 
